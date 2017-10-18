@@ -1,0 +1,142 @@
+*{
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+
+  font-family: Futura, sans-serif;
+}
+
+.container{
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 56px auto;
+
+  padding-bottom: 20px;
+}
+
+#logo{
+  min-height: 35px;
+  max-height: 50px;
+  float: left;
+  padding: 10px 0 0 20px;
+}
+
+#brandname{
+  text-align: center;
+  padding: 6px 10px;
+}
+
+.branding{
+  grid-column: 1 / 2;
+  width: 100%;
+  border-bottom: solid 2px #d64c3d;
+}
+
+.branding img{
+  width: auto;
+  height: 35px;
+}
+
+.placeholder{
+  grid-column: 2 / 3;
+  width: 100%;
+  border-bottom: solid 2px #d64c3d;
+}
+
+#nav{
+  grid-column: 3/5;
+  text-align: right;
+  height: 100%;
+}
+
+#nav a{
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: solid 2px #d64c3d;
+  color: #000;
+  width: 20%;
+  height: 100%;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  transition-timing-function: ease;
+  -webkit-transition: background-color 0.2s;
+}
+
+#nav a:hover{
+  background-color: #f1f1f1;
+  border-bottom: solid 2px #e39e97;
+}
+
+#nav a:active{
+  background-color: #f1f1f1;
+  border-bottom: solid 2px #e39e97;
+}
+
+.content{
+  max-width: 1170px;
+  margin: auto;
+
+  grid-row: 3 / 4;
+
+  overflow: hidden;
+
+  font-family: Futura, sans-serif;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+
+
+}
+
+.stats{
+  text-decoration: none;
+  font-size: 65px;
+  color: #000;
+  background-color: #81acb1;
+  text-align: center;
+  height: auto;
+  width: auto;
+  padding: 15px;
+}
+
+.recentActivity{
+  background-color: #81acb1;
+  float: left;
+  padding: 10px;
+  font-size: 30px;
+
+  grid-column: 1 / 3;
+}
+
+.recentActivity a{
+    text-decoration: none;
+    margin: 5px 0 30px 0;
+    color: #000;
+    text-align: left;
+    width: 100%;
+}
+
+.table ul li{
+  background-color: #f1f1f1;
+  font-size: 20px;
+  padding: 5px;
+  line-height: 20px;
+  list-style-type: none;
+}
+
+.table ul li:nth-child(even){
+  background-color: #fff;
+}
+
+footer{
+  background-color: #9e1415;
+  color: #fff;
+  padding: 2px;
+  margin: 20px 0 0 0;
+  text-align: center;
+}

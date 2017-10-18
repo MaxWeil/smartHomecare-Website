@@ -1,0 +1,75 @@
+*{
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+
+}
+
+.container{
+  overflow: hidden;
+
+  font-family: Futura, sans-serif;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 56px auto;
+
+  padding-bottom: 20px;
+}
+
+#logo{
+  min-height: 35px;
+  max-height: 50px;
+  float: left;
+  padding: 10px 0 0 20px;
+}
+
+#brandname{
+  text-align: center;
+  padding: 6px 10px;
+}
+
+.branding{
+  grid-column: 1 / 2;
+  width: 100%;
+  border-bottom: solid 2px #d64c3d;
+}
+
+.branding img{
+  width: auto;
+  height: 35px;
+}
+
+.placeholder{
+  grid-column: 2 / 3;
+  width: 100%;
+  border-bottom: solid 2px #d64c3d;
+}
+
+#nav{
+  grid-column: 3/5;
+  text-align: right;
+  height: 100%;
+}
+
+#nav a{
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: solid 2px #d64c3d;
+  color: #000;
+  width: 20%;
+  height: 100%;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#nav a:hover{
+  background-color: #f1f1f1;
+  border-bottom: solid 2px #e39e97;
+}
+
+#nav a:active{
+  background-color: #f1f1f1;
+  border-bottom: solid 2px #e39e97;
+}
