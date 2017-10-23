@@ -1,142 +1,207 @@
 *{
-  box-sizing: border-box;
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
+  margin: 0;
+  padding: 0;
 
-  font-family: Futura, sans-serif;
+  overflow: hidden;
 }
 
-.container{
-  overflow: hidden;
+body{
+  font-family: 'Ubuntu', sans-serif;
 
+  background-color: #f1f1f1;
+}
+
+.loginbody{
+  min-height: 100%;
+}
+
+/* navbar */
+.navbar{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 56px auto;
+  grid-template-columns: auto 20% 2fr repeat(5, 1fr);
+  grid-template-rows: auto;
 
-  padding-bottom: 20px;
+  grid-template-areas: "logo brandname . dashboard logs employees clients logout";
+
+  font-size: auto;
+
+  margin-bottom: 15px;
 }
 
 #logo{
-  min-height: 35px;
-  max-height: 50px;
-  float: left;
-  padding: 10px 0 0 20px;
-}
-
-#brandname{
-  text-align: center;
-  padding: 6px 10px;
-}
-
-.branding{
-  grid-column: 1 / 2;
-  width: 100%;
-  border-bottom: solid 2px #d64c3d;
-}
-
-.branding img{
-  width: auto;
-  height: 35px;
-}
-
-.placeholder{
-  grid-column: 2 / 3;
-  width: 100%;
-  border-bottom: solid 2px #d64c3d;
-}
-
-#nav{
-  grid-column: 3/5;
-  text-align: right;
-  height: 100%;
-}
-
-#nav a{
-  display: inline-block;
-  text-decoration: none;
-  border-bottom: solid 2px #d64c3d;
-  color: #000;
-  width: 20%;
-  height: 100%;
-  padding: 16px;
-  text-align: center;
-  font-size: 18px;
-  transition-timing-function: ease;
-  -webkit-transition: background-color 0.2s;
-}
-
-#nav a:hover{
-  background-color: #f1f1f1;
-  border-bottom: solid 2px #e39e97;
-}
-
-#nav a:active{
-  background-color: #f1f1f1;
-  border-bottom: solid 2px #e39e97;
-}
-
-.content{
-  max-width: 1170px;
-  margin: auto;
-
-  grid-row: 3 / 4;
-
-  overflow: hidden;
-
-  font-family: Futura, sans-serif;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 10px;
-
-
-}
-
-.stats{
-  text-decoration: none;
-  font-size: 65px;
-  color: #000;
-  background-color: #81acb1;
-  text-align: center;
-  height: auto;
-  width: auto;
-  padding: 15px;
-}
-
-.recentActivity{
-  background-color: #81acb1;
-  float: left;
-  padding: 10px;
-  font-size: 30px;
-
-  grid-column: 1 / 3;
-}
-
-.recentActivity a{
-    text-decoration: none;
-    margin: 5px 0 30px 0;
-    color: #000;
-    text-align: left;
-    width: 100%;
-}
-
-.table ul li{
-  background-color: #f1f1f1;
-  font-size: 20px;
+  height: 45px;
   padding: 5px;
-  line-height: 20px;
-  list-style-type: none;
+
+  grid-area: logo;
+
+  border-bottom: solid 2px #d64c3d;
 }
 
-.table ul li:nth-child(even){
+#brandname {
+  font-weight: 100;
+  font-size: 20px;
+  text-align: left;
+  vertical-align: middle;
+
+  grid-area: brandname;
+
+  line-height: 55px;
+
+  padding-left: 1em;
+
+  border-bottom: solid 2px #d64c3d;
+}
+
+#navPlaceholder{
+  border-bottom: solid 2px #d64c3d;
+}
+
+.navbar a{
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 100%;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+
+  color: #000;
+
+  padding: 1.4em;
+
+  border-bottom: solid 2px #d64c3d;
+  outline: 0; /*remove dashed focus border*/
+
+  transition-timing-function: ease;
+  -webkit-transition: border-bottom 0.5s;
+}
+
+.navbar a:hover{
+  background-color: #f1f1f1;
+  border-bottom: solid 2px #e39e97;
+
+  color: #3c3c3c;
+}
+
+#aDashboard{
+  grid-area: dashboard;
+}
+
+#aLogs{
+  grid-area: logs;
+}
+
+#aEmployees{
+  grid-area: employees;
+}
+
+#aClients{
+  grid-area: clients;
+}
+
+#btnLogout{
   background-color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+
+  grid-area: logout;
+
+  border: none;
+  border-bottom: solid 2px #d64c3d;
 }
 
+#btnLogout:hover{
+  background-color: #f1f1f1;
+  border-bottom: solid 2px #e39e97;
+
+  cursor: pointer;
+
+  color: #3c3c3c;
+
+  transition-timing-function: ease;
+  -webkit-transition: border-bottom 0.5s;
+}
+
+/*footer*/
 footer{
   background-color: #9e1415;
   color: #fff;
   padding: 2px;
-  margin: 20px 0 0 0;
   text-align: center;
+  font-size: 14px;
+
+  grid-area: footer;
+}
+
+#loginFooter{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/*login.php*/
+#loginBody{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:  ". loginform .";
+
+  background-color: #f1f1f1;
+}
+
+.loginContainer{
+  grid-area: loginform;
+
+  border-top: solid 2px #9e1415;
+
+  background-color: #fff;
+
+  margin: 5em 0;
+}
+
+.loginContainer img{
+  height: 100px;
+  display: block;
+  margin: 6% auto;
+}
+
+.inputField{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 23px;
+
+  width: 75%;
+  margin: 6.5% auto;
+
+  display: block;
+
+  border: none;
+  border-bottom: solid 2px #9e1415;
+}
+
+.inputField:focus{
+  color: #aaa;
+
+  border-bottom: solid 2px #e39e97;
+}
+
+#loginButton{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+
+  width: 75%;
+  margin: 6.5% auto;
+  padding: 10px 0;
+  display: block;
+
+  border: none;
+  border-radius: 3px;
+}
+
+#loginButton:hover{
+  background-color: #ccc;
+
+  cursor: pointer;
+}
+
+#loginButton:focus{
+  outline: 0; /*remove dashed focus border*/
 }
