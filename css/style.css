@@ -7,8 +7,6 @@
 
 body{
   font-family: 'Ubuntu', sans-serif;
-
-  background-color: #f1f1f1;
 }
 
 .loginbody{
@@ -98,13 +96,21 @@ body{
   grid-area: clients;
 }
 
+#formBtnLogout{
+  grid-area: logout;
+  text-align: center;
+  vertical-align: middle;
+
+  padding: 1.4em;
+
+  display: block;
+}
+
 #btnLogout{
   background-color: #fff;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 100;
   font-size: 14px;
-
-  grid-area: logout;
 
   border: none;
   border-bottom: solid 2px #d64c3d;
@@ -158,10 +164,22 @@ footer{
   margin: 5em 0;
 }
 
+#txtLogin{
+  background-color: #9e1415;
+  color: #fff;
+
+  text-align: center;
+  font-size: 50px;
+
+  width: 100%;
+
+  padding: 1%;
+}
+
 .loginContainer img{
   height: 100px;
   display: block;
-  margin: 6% auto;
+  margin: 2% auto;
 }
 
 .inputField{
@@ -169,7 +187,7 @@ footer{
   font-size: 23px;
 
   width: 75%;
-  margin: 6.5% auto;
+  margin: 4% auto;
 
   display: block;
 
@@ -178,8 +196,6 @@ footer{
 }
 
 .inputField:focus{
-  color: #aaa;
-
   border-bottom: solid 2px #e39e97;
 }
 
@@ -198,8 +214,9 @@ footer{
 
 #loginButton:hover{
   background-color: #ccc;
-
+  color: #000;
   cursor: pointer;
+
 }
 
 #loginButton:focus{

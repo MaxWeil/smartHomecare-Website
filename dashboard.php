@@ -1,3 +1,14 @@
+<?php
+  include 'php/database.php';
+
+  session_start();
+
+  if(isset($_SESSION['u_id']) == false){
+    header("Location: index.php?error");
+    exit();
+  }
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,6 +32,13 @@
 <?php
   include_once 'navbar.php';
  ?>
+
+ <?php
+  $sqlQuery = mysqli_query($connection, "SELECT * FROM account WHERE ID=".$_SESSION['u_id']);
+  $row = mysqli_fetch_assoc($sqlQuery);
+
+  echo("Willkommen ".$row['name']." ".$row['surname']);
+  ?>
 
 <?php
   include_once 'footer.php';
