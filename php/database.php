@@ -1,8 +1,8 @@
 <?php
-  $dbServer = "";
-  $dbUsername = "";
+  $dbServer = "localhost";
+  $dbUsername = "root";
   $dbPassword = "";
-  $dbName = "";
+  $dbName = "smarthomecare";
 
-  $dbConnection = mysqli_connect($dbServer, $dbUsername, $dbPassword, $dbName);
+  $connection = mysqli_connect($dbServer, $dbUsername, $dbPassword, $dbName);
  ?>

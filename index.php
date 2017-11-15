@@ -1,3 +1,7 @@
+<?php
+  session_start();
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +22,7 @@
 
       <img src="./img/logo.jpg">
 
-      <form class="loginForm" action="./php/database.php" method="POST">
+      <form class="loginForm" action="./php/login.php" method="POST">
         <input class="inputField" type="text" name="userEMail" placeholder="E-Mail">
         <input class="inputField" type="password" name="userPassword" placeholder="Password">
 

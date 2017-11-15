@@ -1,3 +1,7 @@
+<?php
+  session_start();
+ ?>
+
     <header>
       <div class="navbar">
         <img id="logo" src="./img/logo.jpg">
