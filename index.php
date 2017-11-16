@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./img/logo.jpg">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="./fonts/ubuntu.css" rel="stylesheet">
 
     <title>smartHomecare Login</title>
   </head>
@@ -26,7 +26,7 @@
      ?>
     <div class="loginContainer">
 
-      <div id="txtLogin">Login</div>
+      <!--<div id="txtLogin">Login</div>-->
 
       <img src="img/logo.jpg">
 

@@ -21,9 +21,7 @@ body{
 
   grid-template-areas: "logo brandname . dashboard logs employees clients logout";
 
-  font-size: auto;
-
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 #logo{
@@ -101,8 +99,6 @@ body{
   text-align: center;
   vertical-align: middle;
 
-  padding: 1.4em;
-
   display: block;
 }
 
@@ -114,6 +110,9 @@ body{
 
   border: none;
   border-bottom: solid 2px #d64c3d;
+
+  width: 100%;
+  height: 100%;
 }
 
 #btnLogout:hover{
@@ -164,7 +163,7 @@ footer{
   margin: 5em 0;
 }
 
-#txtLogin{
+/*#txtLogin{
   background-color: #9e1415;
   color: #fff;
 
@@ -174,12 +173,12 @@ footer{
   width: 100%;
 
   padding: 1%;
-}
+}*/
 
 .loginContainer img{
   height: 100px;
   display: block;
-  margin: 2% auto;
+  margin: 7.5% auto;
 }
 
 .inputField{
@@ -222,3 +221,5 @@ footer{
 #loginButton:focus{
   outline: 0; /*remove dashed focus border*/
 }
+
+/*Media Queries*/

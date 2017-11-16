@@ -1,12 +1,13 @@
 <?php
-  include 'php/database.php';
 
   session_start();
 
-  if(isset($_SESSION['u_id']) == false){
+  if(isset($_SESSION['u_id'])){
+
+  }else{
     header("Location: index.php?error");
-    exit();
   }
+
  ?>
 
 <!DOCTYPE html>
@@ -24,36 +25,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <title>Dashboard</title>
-
+    <title>Employees</title>
   </head>
-
-  <body class="bodyDashboard">
-
-    <?php
-      include_once 'navbar.php';
-     ?>
-    <div class="welcome">
-      <?php echo("Logged in as ".$_SESSION['u_name']." ".$_SESSION['u_surname']);?>
-      <a href="accountSettings.php">change Account Settings</a>
-    </div>
-
-    <a href="employees.php">
-      <div id="employeeCount">
-
-      </div>
-    </a>
-
-    <a href="clients.php">
-      <div id="clientCount">
-
-      </div>
-    </a>
-
-    <?php
-      include_once 'footer.php';
-     ?>
+  <body>
 
   </body>
-
 </html>
