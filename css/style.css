@@ -1,12 +1,13 @@
 *{
   margin: 0;
   padding: 0;
-
-  overflow: hidden;
 }
 
 body{
   font-family: 'Ubuntu', sans-serif;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .loginbody{

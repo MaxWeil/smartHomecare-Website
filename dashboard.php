@@ -75,13 +75,32 @@
         <th class="colTime">Arrival</th>
         <th class="colTime">Depature</th>
         <th class="colTime">Period of Time</th>
+
+        <?php
+          $result = mysqli_query($connection, "SELECT * FROM timestamp");
+
+          for($i = 0; $i < mysqli_num_rows($result); $i++){
+            $row = mysqli_fetch_assoc($result);
+
+            $employeeAccount = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM account WHERE ID=".$row['Employee_Account_ID']));
+
+            $clientAccount = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM account WHERE ID=".$row['Client_Account_ID']));
+            echo "<tr>";
+              echo "<td>".$row['date']."</td>";
+              echo "<td>".$employeeAccount['name']." ".$employeeAccount['surname']."</td>";
+              echo "<td>".$clientAccount['name']." ".$clientAccount['surname']."</td>";
+              echo "<td>".$row['arrival']."</td>";
+              echo "<td>".$row['departure']."</td>";
+              echo "<td>".$row['period_of_time']."</td>";
+            echo "</tr>";
+          }
+         ?>
       </table>
     </div>
 
     <?php
       include_once 'footer.php';
      ?>
-
   </body>
 
 </html>
