@@ -40,7 +40,7 @@
     </div>
 
     <footer id="loginFooter">
-      <span>&copy; smartHomecare - Dimploma Project: Maximilian Kapper (Database Server) | Noah Zuchna (Mobile App) | Maximilian Weilbuchner (Website)</span>
+      <span>&copy; smartHomecare - Dimploma Project: Maximilian Kapper (Server & Database) | Noah Zuchna (Mobile App) | Maximilian Weilbuchner (Website)</span>
     </footer>
 
   </body>

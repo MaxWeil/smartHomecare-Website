@@ -30,9 +30,9 @@ session_start();
           header("Location: ../index.php?login=invalidEmail");
           exit();
         }else{
-          //check if account ID matches to a nurse
+          //check if account ID matches to a employee
           if($row = mysqli_fetch_assoc($result)){
-            $sqlQuery = "SELECT * FROM nurse WHERE Account_ID=".$row['ID'];
+            $sqlQuery = "SELECT * FROM employee WHERE Account_ID=".$row['ID'];
             $result = mysqli_query($connection, $sqlQuery);
 
             if(mysqli_num_rows($result) < 1){

@@ -1,0 +1,114 @@
+.bodyDashboard{
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 5%;
+  grid-template-rows: auto;
+
+  grid-template-areas:  "navbar navbar navbar navbar"
+                        "welcome welcome welcome welcome"
+                        ". . . ."
+                        ". employee client ."
+                        ". recentActivity recentActivity ."
+                        "footer footer footer footer";
+
+  grid-column-gap: 3%;
+
+  background-color: #f1f1f1;
+}
+
+.navbar{
+  grid-area: navbar;
+}
+
+.welcome{
+  padding: 3px;
+  margin: 10px;
+
+  border: solid 2px #4CAF50;
+  background-color: #A5D6A7;
+  color: #fff;
+
+  grid-area: welcome;
+
+  justify-self: right;
+
+  border-radius: 3px;
+}
+
+.welcome a{
+  color: #fff;
+}
+
+.stat{
+  text-decoration: none;
+  color: #fff;
+
+  background-color: #4c96a0;
+
+  text-align: center;
+
+  padding: 5px;
+  margin: 5px;
+
+  margin-bottom: 20px;
+}
+
+.stat span{
+  font-size: 15px;
+
+  vertical-align: middle;
+}
+
+#statCount{
+  font-size: 40px;
+
+  height: 100%;
+}
+
+#employee{
+  grid-area: employee;
+}
+
+#client{
+  grid-area: client;
+}
+
+#recentActivity{
+  grid-area: recentActivity;
+
+  background-color: #4c96a0;
+
+  margin: 5px;
+}
+
+#recentActivity span{
+  color: #fff;
+
+  padding: 10px;
+  font-size: 20px;
+}
+
+#recents{
+  width: 98%;
+  margin: 5px auto;
+}
+
+#recents th{
+  background-color: #fff;
+}
+
+#recent td:nth-child(even){
+  background-color: #e1e1e1;
+}
+
+#recents, #recents th, td{
+  border: 1px solid #aaa;
+  border-collapse: collapse;
+}
+
+.colDate, .colTime{
+  width: 15%:
+}
+
+.colName{
+  width: 20%;
+}

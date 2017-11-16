@@ -31,6 +31,7 @@ body{
   grid-area: logo;
 
   border-bottom: solid 2px #d64c3d;
+  background-color: #fff;
 }
 
 #brandname {
@@ -46,10 +47,13 @@ body{
   padding-left: 1em;
 
   border-bottom: solid 2px #d64c3d;
+
+  background-color: #fff;
 }
 
 #navPlaceholder{
   border-bottom: solid 2px #d64c3d;
+  background-color: #fff;
 }
 
 .navbar a{
@@ -69,6 +73,8 @@ body{
 
   transition-timing-function: ease;
   -webkit-transition: border-bottom 0.5s;
+
+  background-color: #fff;
 }
 
 .navbar a:hover{
