@@ -66,9 +66,3 @@
 #saveButton:hover{
   border: 2px solid #e39e97;
 }
-
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}

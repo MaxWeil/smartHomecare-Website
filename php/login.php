@@ -1,11 +1,10 @@
 <?php
 
-include'database.php';
+include 'database.php';
 
 session_start();
 
   if(isset($_POST['btnLogin'])){
-    include_once 'database.php';
 
     $email = mysqli_real_escape_string($connection, $_POST['userEMail']);
     $password = mysqli_real_escape_string($connection, $_POST['userPassword']);

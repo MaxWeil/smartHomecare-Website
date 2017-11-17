@@ -24,6 +24,22 @@
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+     <script>
+     //check input fields
+     $(document).ready(function(){
+       $('#fieldName').keyup(function(){
+         if($('#fieldName').text() === ""){
+           $('#pName').css("color", "#9e1415");
+           $('#pName').html("please fill in your name");
+         } else if (!$('fieldName').text() === ""){
+           $('#pName').css("color", "#555");
+           $('#pName').html("Name");
+         }
+       });
+     });
+
+     </script>
+
      <title>Account Settings</title>
    </head>
    <body class="bodyAccountSettings">
@@ -35,35 +51,23 @@
       <span>Your Account</span>
 
       <form class="settingsForm" action="php/changeSettings.php" method="POST">
-        <input class="inputField inputFieldSettings" type="text" name="name" value=
-          <?php
-            echo $_SESSION['u_name'];
-           ?>
-        >
-        <p>Name</p>
+        <input id="fieldName" class="inputField inputFieldSettings" type="text" name="name" value=<?php echo $_SESSION['u_name'];?>>
+        <p id="pName">Name</p>
 
-        <input class="inputField inputFieldSettings" type="text" name="surname" value=
-          <?php
-            echo $_SESSION['u_surname'];
-           ?>
-        >
-        <p>Surname</p>
+        <input id="fieldSurname" class="inputField inputFieldSettings" type="text" name="surname" value=<?php echo $_SESSION['u_surname'];?>>
+        <p id="pSurname">Surname</p>
 
-        <input class="inputField inputFieldSettings" type="text" name="email" value=
-          <?php
-            echo $_SESSION['u_email'];
-           ?>
-        >
-        <p>EMail</p>
+        <input id="fieldEmail" class="inputField inputFieldSettings" type="text" name="email" value=<?php echo $_SESSION['u_email'];?>>
+        <p id="pEmail">E-Mail</p>
 
-        <input class="inputField inputFieldSettings" type="password" name="oldPassword">
-        <p>current password</p>
+        <input id="fieldOldPassword" class="inputField inputFieldSettings" type="password" name="oldPassword">
+        <p id="pOldPassword">current password</p>
 
-        <input class="inputField inputFieldSettings" type="password" name="newPassword1">
-        <p>new password</p>
+        <input id="fieldNewPassword1" class="inputField inputFieldSettings" type="password" name="newPassword1">
+        <p id="pNewPassword1">new password</p>
 
-        <input class="inputField inputFieldSettings" type="password" name="newPassword2">
-        <p>confirm new password</p>
+        <input id="fieldNewPassword2" class="inputField inputFieldSettings" type="password" name="newPassword2">
+        <p id="pNewPassword2">confirm new password</p>
 
         <button id="saveButton" type="submit" name="btnSaveSettings">save settings</button>
       </form>
