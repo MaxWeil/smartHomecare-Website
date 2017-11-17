@@ -5,7 +5,6 @@
 
   grid-template-areas:  "navbar navbar navbar navbar"
                         "welcome welcome welcome welcome"
-                        ". . . ."
                         ". employee client ."
                         ". recentActivity recentActivity ."
                         "footer footer footer footer";
@@ -50,6 +49,8 @@
   margin: 5px;
 
   margin-bottom: 20px;
+
+  border-top: 2px solid #d64c3d;
 }
 
 .stat span{
@@ -79,6 +80,9 @@
   background-color: #4c96a0;
 
   margin: 5px;
+  margin-bottom: 10px;
+
+  border-top: 2px solid #d64c3d;
 }
 
 #recentActivity span{
@@ -92,7 +96,8 @@
 
 #recents{
   width: 98%;
-  margin: 5px auto;
+  margin: auto;
+  margin-bottom: 10px;
 
   border-collapse: collapse;
 }
@@ -119,17 +124,22 @@
   border-right: 0;
 }
 
+#recents tr td a{
+  text-decoration: none;
+  color: #000;
+}
+
 .colDate{
   width: 100px;
   border-left: none;
 }
 
 .colName{
-  width: 250px;
+  width: 280px;
 }
 
 .colTime{
-  width: 150px;
+  width: 125px;
 }
 
 #recents tr:nth-child(even){
@@ -138,4 +148,10 @@
 
 #recents tr:nth-child(odd){
   background-color: #fff;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

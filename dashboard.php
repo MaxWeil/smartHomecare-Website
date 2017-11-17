@@ -73,11 +73,11 @@
         <th class="colName">Employee</th>
         <th class="colName">Client</th>
         <th class="colTime">Arrival</th>
-        <th class="colTime">Depature</th>
+        <th class="colTime">Departure</th>
         <th class="colTime">Period of Time</th>
 
         <?php
-          $result = mysqli_query($connection, "SELECT * FROM timestamp");
+          $result = mysqli_query($connection, "SELECT * FROM timestamp ORDER BY date DESC LIMIT 10");
 
           for($i = 0; $i < mysqli_num_rows($result); $i++){
             $row = mysqli_fetch_assoc($result);
@@ -87,11 +87,23 @@
             $clientAccount = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM account WHERE ID=".$row['Client_Account_ID']));
             echo "<tr>";
               echo "<td>".$row['date']."</td>";
-              echo "<td>".$employeeAccount['name']." ".$employeeAccount['surname']."</td>";
-              echo "<td>".$clientAccount['name']." ".$clientAccount['surname']."</td>";
+              echo "<td>
+                      <a href=\"employees.php?eA=".$row['Employee_Account_ID']."\">"
+                        .$employeeAccount['name']." ".$employeeAccount['surname']."
+                      </a>
+                    </td>";
+              echo "<td>
+                      <a href=\"clients.php?cA=".$row['Client_Account_ID']."\">"
+                        .$clientAccount['name']." ".$clientAccount['surname']."
+                      </a>
+                    </td>";
               echo "<td>".$row['arrival']."</td>";
               echo "<td>".$row['departure']."</td>";
-              echo "<td>".$row['period_of_time']."</td>";
+              echo "<td>
+                      <a href=\"logs.php?lID=".$row['Log_ID']."\">"
+                        .$row['period_of_time']."
+                      </a>
+                    </td>";
             echo "</tr>";
           }
          ?>

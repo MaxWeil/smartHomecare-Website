@@ -6,12 +6,7 @@
 body{
   font-family: 'Ubuntu', sans-serif;
 
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.loginbody{
-  min-height: 100%;
+  overflow: hidden;
 }
 
 /* navbar */
@@ -74,6 +69,7 @@ body{
 
   transition-timing-function: ease;
   -webkit-transition: border-bottom 0.5s;
+  -webkit-transition: background-color 0.5s;
 
   background-color: #fff;
 }
@@ -120,6 +116,10 @@ body{
 
   width: 100%;
   height: 100%;
+
+  transition-timing-function: ease;
+  -webkit-transition: border-bottom 0.5s;
+  -webkit-transition: background-color 0.5s;
 }
 
 #btnLogout:hover{
@@ -129,9 +129,6 @@ body{
   cursor: pointer;
 
   color: #3c3c3c;
-
-  transition-timing-function: ease;
-  -webkit-transition: border-bottom 0.5s;
 }
 
 /*footer*/
@@ -205,7 +202,7 @@ footer{
   border-bottom: solid 2px #e39e97;
 }
 
-#loginButton{
+#loginButton, #saveButton{
   font-family: 'Ubuntu', sans-serif;
   font-size: 25px;
 
@@ -218,14 +215,14 @@ footer{
   border-radius: 3px;
 }
 
-#loginButton:hover{
+#loginButton:hover , #saveButton:hover{
   background-color: #ccc;
   color: #000;
   cursor: pointer;
 
 }
 
-#loginButton:focus{
+#loginButton:focus, #saveButton:focus{
   outline: 0; /*remove dashed focus border*/
 }
 
