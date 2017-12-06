@@ -6,6 +6,9 @@
   if(isset($_SESSION['u_id']) == false){
     header("Location: index.php?error");
     exit();
+  } else if($_SESSION['u_auth_lvl'] == 0){
+    header("Location: accountSettings.php");
+    exit();
   }
  ?>
 
@@ -77,34 +80,45 @@
         <th class="colTime">Period of Time</th>
 
         <?php
-          $result = mysqli_query($connection, "SELECT * FROM timestamp ORDER BY date DESC LIMIT 10");
+          $sqlQuery =   "SELECT   timestamp.ID,
+                                  timestamp.date,
+                                  timestamp.Employee_ID,
+                                  CONCAT_WS(' ',employee.name, employee.surname) AS employee_name,
+                                  timestamp.Client_ID, CONCAT_WS(' ',client.name, client.surname) AS client_name,
+                                  timestamp.departure,
+                                  timestamp.arrival,
+                                  TIMEDIFF(departure, arrival) period_of_time
+                                  FROM timestamp
+                                  INNER JOIN employee ON timestamp.Employee_ID=employee.ID
+                                  INNER JOIN client ON timestamp.Client_ID=client.ID
+                                  ORDER BY date DESC
+                                  LIMIT 10";
 
-          for($i = 0; $i < mysqli_num_rows($result); $i++){
-            $row = mysqli_fetch_assoc($result);
+          $result = mysqli_query($connection, $sqlQuery);
 
-            $employeeAccount = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM account WHERE ID=".$row['Employee_Account_ID']));
+          while($row = mysqli_fetch_assoc($result)){
 
-            $clientAccount = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM account WHERE ID=".$row['Client_Account_ID']));
             echo "<tr>";
               echo "<td>".$row['date']."</td>";
               echo "<td>
-                      <a href=\"employees.php?eA=".$row['Employee_Account_ID']."\">"
-                        .$employeeAccount['name']." ".$employeeAccount['surname']."
+                      <a href=\"employees.php?e=".$row['Employee_ID']."\">"
+                        .$row['employee_name']."
                       </a>
                     </td>";
               echo "<td>
-                      <a href=\"clients.php?cA=".$row['Client_Account_ID']."\">"
-                        .$clientAccount['name']." ".$clientAccount['surname']."
+                      <a href=\"clients.php?c=".$row['Client_ID']."\">"
+                        .$row['client_name']."
                       </a>
                     </td>";
               echo "<td>".$row['arrival']."</td>";
               echo "<td>".$row['departure']."</td>";
               echo "<td>
-                      <a href=\"logs.php?lID=".$row['Log_ID']."\">"
+                      <a href=\"logs.php?ID=".$row['ID']."\">"
                         .$row['period_of_time']."
                       </a>
                     </td>";
             echo "</tr>";
+
           }
          ?>
       </table>

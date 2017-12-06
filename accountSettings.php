@@ -37,7 +37,6 @@
          }
        });
      });
-
      </script>
 
      <title>Account Settings</title>
@@ -51,13 +50,13 @@
       <span>Your Account</span>
 
       <form class="settingsForm" action="php/changeSettings.php" method="POST">
-        <input id="fieldName" class="inputField inputFieldSettings" type="text" name="name" value=<?php echo $_SESSION['u_name'];?>>
+        <input id="fieldName" class="inputField inputFieldSettings" type="text" name="name" value=<?php echo $_SESSION['u_name'];?> >
         <p id="pName">Name</p>
 
-        <input id="fieldSurname" class="inputField inputFieldSettings" type="text" name="surname" value=<?php echo $_SESSION['u_surname'];?>>
+        <input id="fieldSurname" class="inputField inputFieldSettings" type="text" name="surname" value=<?php echo $_SESSION['u_surname'];?> >
         <p id="pSurname">Surname</p>
 
-        <input id="fieldEmail" class="inputField inputFieldSettings" type="text" name="email" value=<?php echo $_SESSION['u_email'];?>>
+        <input id="fieldEmail" class="inputField inputFieldSettings" type="text" name="email" value=<?php echo $_SESSION['u_email'];?> >
         <p id="pEmail">E-Mail</p>
 
         <input id="fieldOldPassword" class="inputField inputFieldSettings" type="password" name="oldPassword">
@@ -68,6 +67,9 @@
 
         <input id="fieldNewPassword2" class="inputField inputFieldSettings" type="password" name="newPassword2">
         <p id="pNewPassword2">confirm new password</p>
+
+        <input type="phone" class="inputField inputFieldSettings" type="text" name="phone" value=<?php echo $_SESSION['phone'];?> >
+        <p id="phone">phone number</p>
 
         <button id="saveButton" type="submit" name="btnSaveSettings">save settings</button>
       </form>

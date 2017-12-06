@@ -1,5 +1,5 @@
 <div class="navbar">
-  <img id="logo" src="./img/logo.jpg">
+  <img id="logo" src="./img/logo.png">
   <span id="brandname">smartHomecare</span>
 
   <div id="navPlaceholder"></div>

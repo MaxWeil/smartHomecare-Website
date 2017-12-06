@@ -11,7 +11,7 @@
     <meta name="author" content="Maximilian Weilbuchner">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./img/logo.jpg">
+    <link rel="icon" href="./img/logo.png">
     <link href="./fonts/ubuntu.css" rel="stylesheet">
 
     <title>smartHomecare Login</title>
@@ -28,7 +28,7 @@
 
       <!--<div id="txtLogin">Login</div>-->
 
-      <img src="img/logo.jpg">
+      <img src="img/logo.png">
 
       <form class="loginForm" action="php/login.php" method="POST">
         <input class="inputField" type="text" name="userEMail" placeholder="E-Mail">
