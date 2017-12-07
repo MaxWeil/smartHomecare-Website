@@ -16,10 +16,26 @@
     //hash password
     $hashedPassword = password_hash($newPassword1, PASSWORD_DEFAULT);
 
+    //create error booleans
+    //error: empty
+    $emptyName = false;
+    $emptySurname = false;
+    $emptyEmail = false;
+    $emptyPassword = false;
+
+    //error: wrong/invalid data
+    $errorName = false;
+    $errorSurname = false;
+    $errorEmail = false;
+    $errorPassword = false;
+    $errorNewPasswordsMatch = false;
+    //$errorNewPasswordSafe = false;
+    $errorPhone = false;
+
     //error handlers
     //check if compulsory fields are empty
     if(empty($name) || empty($surname) || empty($email)){
-      header("Location: ..accountSettings.php?save=emptyFields");
+      header("Location: ../accountSettings.php?save=emptyFields");
       exit();
     }else{
       //check for valid email
@@ -49,7 +65,7 @@
                 header("Location: ../accountSettings.php?save=invalidPassword");
                 exit();
               }else if($passwordCheck === true){
-                
+
                 //only update fields that are not empty
                 function updateTable($table, $column, $value, $id){
                   $sqlQuery = " UPDATE ".$table."

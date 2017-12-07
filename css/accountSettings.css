@@ -40,7 +40,13 @@
     margin: 0 auto;
     margin-top: 10px;
 
+    background-color: #fff;
+
     width: 75%;
+}
+
+.inputFieldSettings:focus{
+  outline: 0;
 }
 
 .settingsForm p{
@@ -52,17 +58,16 @@
   color: #555;
 }
 
-#saveButton{
+#btnSave{
   margin: 10px auto;
   margin-top: 30px;
   padding: 5px;
-
-  border: 2px solid #9e1415;
-
-  transition-timing-function: ease;
-  -webkit-transition: border 0.5s;
 }
 
-#saveButton:hover{
-  border: 2px solid #e39e97;
+#input-error-field{
+  background-color: #e39e97;
+}
+
+#input-error-description{
+  color: #9e1415;
 }

@@ -21,6 +21,7 @@ body{
 }
 
 #logo{
+  padding: 5px;
   height: 45px;
 
   grid-area: logo;
@@ -201,7 +202,7 @@ footer{
   border-bottom: solid 2px #e39e97;
 }
 
-#loginButton, #saveButton{
+#loginButton, #btnSave{
   font-family: 'Ubuntu', sans-serif;
   font-size: 25px;
 
@@ -212,16 +213,21 @@ footer{
 
   border: none;
   border-radius: 3px;
+
+  background-color: #ddd;
+
+  transition-timing-function: ease;
+  -webkit-transition: background-color 0.5s;
 }
 
-#loginButton:hover , #saveButton:hover{
+#loginButton:hover , #btnSave:hover{
   background-color: #ccc;
   color: #000;
   cursor: pointer;
 
 }
 
-#loginButton:focus, #saveButton:focus{
+#loginButton:focus, #btnSave:focus{
   outline: 0; /*remove dashed focus border*/
 }
 
