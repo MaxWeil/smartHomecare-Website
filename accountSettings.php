@@ -22,22 +22,7 @@
      <link rel="icon" href="./img/logo.jpg">
      <link href="./fonts/ubuntu.css" rel="stylesheet">
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-     <script>
-     //check input fields
-     $(document).ready(function(){
-       $('#fieldName').keyup(function(){
-         if($('#fieldName').text() === ""){
-           $('#pName').css("color", "#9e1415");
-           $('#pName').html("please fill in your name");
-         } else if (!$('fieldName').text() === ""){
-           $('#pName').css("color", "#555");
-           $('#pName').html("Name");
-         }
-       });
-     });
-     </script>
+     <?php echo $_SESSION['test']; ?>
 
      <title>Account Settings</title>
    </head>
@@ -59,7 +44,7 @@
         <input id="fieldEmail" class="inputField inputFieldSettings" type="text" name="email" value=<?php echo $_SESSION['u_email'];?> >
         <p id="pEmail">E-Mail</p>
 
-        <input id="fieldOldPassword" class="inputField inputFieldSettings" type="password" name="oldPassword">
+        <input id="fieldOldPassword" class="inputField inputFieldSettings" type="password" name="currentPassword">
         <p id="pOldPassword">current password</p>
 
         <input id="fieldNewPassword1" class="inputField inputFieldSettings" type="password" name="newPassword1">
@@ -71,7 +56,7 @@
         <input type="phone" class="inputField inputFieldSettings" type="text" name="phone" value=<?php echo $_SESSION['phone'];?> >
         <p id="phone">phone number</p>
 
-        <button id="saveButton" type="submit" name="btnSaveSettings">save settings</button>
+        <button id="saveButton" type="submit" name="btnSave">save settings</button>
       </form>
 
     </div>

@@ -40,15 +40,16 @@ session_start();
               $hashedPasswordCheck = password_verify($password, $row['password']);
 
               //password check
-              if($hashedPasswordCheck == false){
+              if($hashedPasswordCheck === false){
                 header("Location: ../index.php?login=wrongPassword");
                 exit();
-              }else if($hashedPasswordCheck == true){
+              }else if($hashedPasswordCheck === true){
                 //log in the user
                 $_SESSION['u_id'] = $row['ID'];
                 $_SESSION['u_name'] = $row['name'];
                 $_SESSION['u_surname'] = $row['surname'];
                 $_SESSION['u_email'] = $row['email'];
+                $_SESSION['u_hashed_password'] = $row['password'];
                 $_SESSION['u_auth_lvl'] = $row['auth_lvl'];
                 $_SESSION['phone'] = $row['phone'];
 
