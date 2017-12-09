@@ -6,7 +6,7 @@ session_start();
 
   if(isset($_POST['btnLogin'])){
 
-    $email = mysqli_real_escape_string($connection, $_POST['userEMail']);
+    $email = mysqli_real_escape_string($connection, $_POST['userEmail']);
     $password = mysqli_real_escape_string($connection, $_POST['userPassword']);
 
     //error handlers

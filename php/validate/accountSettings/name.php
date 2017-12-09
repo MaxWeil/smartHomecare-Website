@@ -12,8 +12,8 @@
     if(empty($name) == true){
       echo "please type a name!";
       $errorEmpty = true;
-    }elseif (preg_match("/^[a-zA-Z'-]+$/", $name) === false) {
-      echo "please type a valid name!"
+    }elseif (preg_match("/^[a-zA-Z'-]+$/", $name) == false) {
+      echo "please type a valid name!";
       $errorInvalid = true;
     }
     else{
@@ -28,8 +28,8 @@
  ?>
 
 <script>
-  $("#pName").removeClass("input-error-description");
   $("#name").removeClass("input-error-field");
+  $("#pName").removeClass("input-error-description");
 
   var errorEmpty = "<?php echo $errorEmpty; ?>"
   var errorInvalid = "<?php echo $errorInvalid; ?>"

@@ -11,8 +11,24 @@
     <meta name="author" content="Maximilian Weilbuchner">
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="icon" href="./img/logo.png">
     <link href="./fonts/ubuntu.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function() {
+      $("submit").submit(function(event) {
+        event.preventDefault();
+          var email = $("#email").val();
+          var password = $("#password").val();
+          var btnLogin = $("btnLogin").val();
+
+          $("#pInfo").load("php/validate/login/login.php", {email: email, ,password: password, submit: btnLogin});
+      });
+    });
+    </script>
 
     <title>smartHomecare Login</title>
   </head>
@@ -30,9 +46,14 @@
 
       <img src="img/logo.png">
 
-      <form class="loginForm" action="php/login.php" method="POST">
-        <input class="inputField" type="text" name="userEMail" placeholder="E-Mail">
-        <input class="inputField" type="password" name="userPassword" placeholder="Password">
+      <form class="loginForm">
+        <span id="pInfo"></span>
+
+        <input id="email" class="inputField" type="text" name="email">
+        <p id="pEmail">Email</p>
+
+        <input id="password" class="inputField" type="password" name="password">
+        <p id="pPassword">Password</p>
 
         <button id="loginButton" type="submit" name="btnLogin">Login</button>
       </form>

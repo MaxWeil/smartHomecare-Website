@@ -19,7 +19,7 @@
 
      <link rel="stylesheet" href="./css/style.css">
      <link rel="stylesheet" href="./css/accountSettings.css">
-     <link rel="icon" href="./img/logo.jpg">
+     <link rel="icon" href="./img/logo.png">
      <link href="./fonts/ubuntu.css" rel="stylesheet">
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -27,7 +27,6 @@
 
      $(document).ready(function() {
        $("input").keyup(function() {
-         event.preventDefault();
          var name = $("#name").val();
          var surname = $("#surname").val();
          var email = $("#email").val();
@@ -37,18 +36,12 @@
          var phone = $("#phone").val();
          var submit = $("btnSave").val();
 
-         $.post("php/validate/name.php", {
-           name: name
-         } function(data) {
-           $("#pName").html(data);
-         });
-
-         $("#pName").load("php/validate/name.php", {name: name;});
-         $("#pSurname").load("php/validate/surname.php", {surname: surname});
-         $("#pEmail").load("php/validate/email.php", {email: email});
-         $("#pPassword").load("php/validate/password.php", {password: currentPassword});
-         $("#pNewPassword1, #pNewPassword2").load("php/validate/newPassword.php"), {newPassword1: newPassword1, newPassword2: newPassword2}
-         $("#phone").load("php/validate/phone.php");
+         $("#pName").load("php/validate/accountSettings/name.php", {name: name});
+         $("#pSurname").load("php/validate/accountSettings/surname.php", {surname: surname});
+         $("#pEmail").load("php/validate/accountSettings/email.php", {email: email});
+         $("#pPassword").load("php/validate/accountSettings/password.php", {password: currentPassword});
+         $("#pNewPassword1, #pNewPassword2").load("php/validate/accountSettings/accountSettings/newPassword.php", {newPassword1: newPassword1, newPassword2: newPassword2});
+         $("#phone").load("php/validate/accountSettings/phone.php");
        });
      });
 
@@ -64,7 +57,7 @@
     <div class="Settings">
       <span>Your Account</span>
 
-      <form class="settingsForm" action="php/changeSettings.php" method="POST">
+      <form class="settingsForm" action="php/validate/login.php" method="POST">
         <input id="name" class="inputField inputFieldSettings" type="text" name="name" value=<?php echo $_SESSION['u_name'];?> >
         <p id="pName">Name</p>
 
@@ -72,7 +65,7 @@
         <p id="pSurname">Surname</p>
 
         <input id="email" class="inputField inputFieldSettings" type="text" name="email" value=<?php echo $_SESSION['u_email'];?> >
-        <p id="pEmail">E-Mail</p>
+        <p id="pEmail">Email</p>
 
         <input id="currentPassword" class="inputField inputFieldSettings" type="password" name="currentPassword">
         <p id="pOldPassword">current password</p>
