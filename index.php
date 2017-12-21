@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  if(isset($_SESSION['u_id'])){
+    header("Location: ../dashboard.php?login=success");
+  }
  ?>
 
 <!DOCTYPE html>
@@ -16,30 +20,19 @@
     <link href="./fonts/ubuntu.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script>
-
-    $(document).ready(function() {
-      $("submit").submit(function(event) {
-        event.preventDefault();
-          var email = $("#email").val();
-          var password = $("#password").val();
-          var btnLogin = $("btnLogin").val();
-
-          $("#pInfo").load("php/validate/login/login.php", {email: email, ,password: password, submit: btnLogin});
-      });
-    });
-    </script>
 
     <title>smartHomecare Login</title>
   </head>
+
+  <?php
+  /*if(isset($_SESSION['u_id'])){
+      echo "logged in!";
+    } else {
+      echo "not logged in!";
+    }*/
+   ?>
+
   <body id="loginBody">
-    <?php
-      if(isset($_SESSION['u_id'])){
-        echo "logged in!";
-      } else {
-        echo "not logged in!";
-      }
-     ?>
     <div class="loginContainer">
 
       <!--<div id="txtLogin">Login</div>-->
@@ -55,14 +48,34 @@
         <input id="password" class="inputField" type="password" name="password">
         <p id="pPassword">Password</p>
 
-        <button id="loginButton" type="submit" name="btnLogin">Login</button>
+        <button id="loginButton" type="submit" name="btnLogin" onclick="loginFunc()">Login</button>
       </form>
 
     </div>
 
     <footer id="loginFooter">
-      <span>&copy; smartHomecare - Dimploma Project: Maximilian Kapper (Server & Database) | Noah Zuchna (Mobile App) | Maximilian Weilbuchner (Website)</span>
+      <span>&copy; smartHomecare - Dimploma Project: Maximilian Kapper  |  Noah Zuchna  |  Maximilian Weilbuchner</span>
     </footer>
+<script>
 
+function loginFunc() {
+    // Code to be executed
+
+      $(".loginForm").submit(function(event) {
+        event.preventDefault();
+          var email = $("#email").val();
+          var password = $("#password").val();
+
+          $("#pInfo").load("./php/login.php", {
+            email: email,
+            password: password
+          });
+      });
+
+}
+
+
+
+</script>
   </body>
 </html>

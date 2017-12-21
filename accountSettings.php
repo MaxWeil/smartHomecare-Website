@@ -57,7 +57,7 @@
     <div class="Settings">
       <span>Your Account</span>
 
-      <form class="settingsForm" action="php/validate/login.php" method="POST">
+      <form class="settingsForm" action="php/login.php" method="POST">
         <input id="name" class="inputField inputFieldSettings" type="text" name="name" value=<?php echo $_SESSION['u_name'];?> >
         <p id="pName">Name</p>
 
