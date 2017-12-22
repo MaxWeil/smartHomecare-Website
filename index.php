@@ -24,14 +24,6 @@
     <title>smartHomecare Login</title>
   </head>
 
-  <?php
-  /*if(isset($_SESSION['u_id'])){
-      echo "logged in!";
-    } else {
-      echo "not logged in!";
-    }*/
-   ?>
-
   <body id="loginBody">
     <div class="loginContainer">
 
