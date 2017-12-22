@@ -1,0 +1,57 @@
+body{
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#login-logo{
+  height: 80px;
+  display: block;
+
+  margin: auto;
+}
+
+#info-span{
+  color: #E0F2F1;
+  font-size: 18px;
+}
+
+.form{
+  padding-top: 15px;
+  margin: 20% auto;
+
+  background-color: #437788;
+  padding: auto 20px;
+
+  border-radius: 2px;
+}
+
+.input{
+  width: 75%;
+  border: 0;
+  outline: 0;
+
+  background-color: #437788;
+  border-bottom: 2px solid #073748;
+  color: #f1f1f1;
+  padding: 2px 0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.input-info{
+  margin: 0 auto;
+  margin-bottom: 5px;
+  width: 75%;
+
+  text-align: left;
+
+  font-size: 12px;
+  color: #073748;
+}
+
+#login-button{
+  width: 75%;
+  height: 30px;
+
+  margin: 15px;
+}
