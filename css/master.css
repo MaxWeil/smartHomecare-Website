@@ -1,5 +1,47 @@
 body{
+  font-family: 'Ubuntu', sans-serif;
   background-color: #f1f1f1;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.heading{
+  font-size: 20px;
+  margin: 10px;
+}
+
+.input{
+  width: 75%;
+  border: 0;
+  outline: 0;
+
+  background-color: #437788;
+  border-bottom: 2px solid #073748;
+  color: #f1f1f1;
+  padding: 2px 0;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.input-info{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 75%;
+
+  text-align: left;
+
+  font-size: 12px;
+  color: #073748;
+}
+
+.input-info-error{
+  color: #9e1415;
+}
+
+.input-error{
+  border-bottom: 2px solid #9e1415;
 }
 
 .button{
@@ -9,8 +51,127 @@ body{
   color: #f1f1f1;
 
   font-size: 16px;
+
+  transition: 0.2s;
+  outline: 0;
 }
 
 .button:hover{
   cursor: pointer;
+  background-color: #285f71;
+}
+
+.button-info-success{
+  color: #149e14;
+  width: 100%;
+  text-align: center;
+}
+
+.button-info-error{
+  color: #9e1415;
+}
+
+.footer{
+  position: relative;
+  margin: 5px;
+  text-align: center;
+}
+
+.topbar{
+  height: 40px;
+  width: 100%;
+  background-color: #073748;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.burger-menu{
+  padding: 4.25px 5px;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+}
+
+.burger-menu div{
+  height: 4px;
+  width: 30px;
+  background-color: #f1f1f1;
+  margin: 5px 0;
+}
+
+.topbar-logo{
+  display: inline-block;
+  height: 30px;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.topbar-logout{
+  outline: 0;
+  border: 0;
+  padding: 0;
+  margin: 5px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+}
+
+.sidenav-container{
+  background-color: #fff;
+  float: left;
+  transition: 0.5s;
+  width: 170px;
+  position: fixed;
+  overflow: hidden;
+}
+
+.sidenav-container-show{
+  width: 170px;
+}
+
+.sidenav-container-hide{
+  width: auto;
+  display: none;
+}
+
+.sidenav-icon{
+  height: 25px;
+  width: 25px;
+  margin: 0 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sidenav-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.sidenav-item li{
+  padding: 10px 5px;
+}
+
+.sidenav-item li:hover{
+  background-color: #E0F2F1;
+  border-right: 2px solid #073748;
+  color: #437788;
+}
+
+.sidenav-item{
+  text-decoration: none;
+  color: #073748;
+}
+
+.sidenav-item li span{
+  padding: 0 15px;
+  transition: 0.3s;
+}
+
+.sidenav-active-element{
+  background-color: rgba(224, 242, 241, 0.6);
 }

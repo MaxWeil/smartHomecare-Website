@@ -1,0 +1,98 @@
+.stats-container{
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.stats-logo{
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+  float: left;
+  margin: 25px;
+}
+
+.stats-container div{
+  display: table-cell;
+  float: right;
+  margin: 10px 0;
+  width: 200px;
+  line-height: 40px;
+}
+
+.stats-count{
+  font-size: 30px;
+  color: #285f71;
+}
+
+.stats-container div p{
+  margin: 0;
+  color: #437788;
+}
+
+.recents-container{
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.recents-container img{
+  height: 30px;
+  margin: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.recents-container p{
+  margin: 15px;
+  color: #285f71;
+  float: left;
+}
+
+.recents-table-container{
+  overflow-x: auto;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.recents-table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.recents-table th{
+  background-color: #e1e1e1;
+  color: #073748;
+  padding: 5px;
+}
+
+.recents-table tr td{
+  text-align: center;
+}
+
+.recents-table tr:nth-child(odd){
+  background-color: #f1f1f1;
+}
+
+.recents-table tr td{
+  color: #437788;
+  padding: 5px;
+}
+
+.recents-table tr td a{
+  text-decoration: none;
+  color: #437788;
+}
+
+#colArrival, #colDeparture{
+  display: none;
+}
